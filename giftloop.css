@@ -1,15 +1,1 @@
-.giftloop-body { background: #fffaf5; }
-.giftloop-body .case-kicker { color: #b85f3d; }
-.giftloop-body .case-cover { background: #f4e8df; }
-.giftloop-body .case-gallery,
-.giftloop-body .case-footer { background: #2d2420; }
-.giftloop-actions { display: flex; justify-content: flex-end; margin-top: 22px; }
-.giftloop-demo {
-  display: inline-flex; align-items: center; gap: 18px; padding-bottom: 5px;
-  border-bottom: 1px solid rgba(55,35,22,.3); color: var(--ink);
-  font-size: .78rem; letter-spacing: .04em; transition: color .25s, border-color .25s, gap .25s;
-}
-.giftloop-demo:hover, .giftloop-demo:focus-visible { gap: 23px; color: var(--orange-dark); border-color: var(--orange-dark); }
-@media (max-width: 760px) {
-  .giftloop-actions { justify-content: flex-start; }
-}
+.giftloop-body .case-cover { background: #eef1f3; }

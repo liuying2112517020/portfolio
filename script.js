@@ -56,3 +56,31 @@ if (copyButton) {
     }
   });
 }
+
+const projectToggle = document.querySelector('[data-project-toggle]');
+const hiddenProjects = document.getElementById('hidden-projects');
+
+if (projectToggle && hiddenProjects) {
+  const toggleLabel = projectToggle.querySelector('[data-project-toggle-label]');
+  let closeTimer;
+
+  projectToggle.addEventListener('click', () => {
+    const willOpen = projectToggle.getAttribute('aria-expanded') !== 'true';
+    window.clearTimeout(closeTimer);
+    projectToggle.setAttribute('aria-expanded', String(willOpen));
+    if (toggleLabel) toggleLabel.textContent = willOpen ? '收起项目' : '查看更多项目';
+
+    if (willOpen) {
+      hiddenProjects.hidden = false;
+      requestAnimationFrame(() => requestAnimationFrame(() => hiddenProjects.classList.add('is-open')));
+      return;
+    }
+
+    hiddenProjects.classList.remove('is-open');
+    if (reducedMotion) {
+      hiddenProjects.hidden = true;
+    } else {
+      closeTimer = window.setTimeout(() => { hiddenProjects.hidden = true; }, 560);
+    }
+  });
+}
