@@ -1,2 +1,50 @@
-.signalflow-body .case-cover { background: #eef1f3; }
+.signalflow-body .case-cover { position: relative; background: #eef1f3; }
 .signalflow-body .case-page { background: #fff; }
+
+.signalflow-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 14px;
+  margin-top: 28px;
+}
+
+.signalflow-demo,
+.signalflow-pdf {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  min-height: 46px;
+  padding: 0 22px;
+  border: 1px solid #364f65;
+  color: #fff;
+  background: #364f65;
+  font-size: 14px;
+  font-weight: 600;
+  transition: background .25s ease, color .25s ease, transform .25s ease;
+}
+
+.signalflow-pdf { color: #364f65; background: transparent; }
+.signalflow-demo:hover,
+.signalflow-pdf:hover { transform: translateY(-2px); }
+.signalflow-demo:hover { background: #293f52; }
+.signalflow-pdf:hover { background: #eef1f3; }
+
+.signalflow-email-mask,
+.signalflow-page-email-mask {
+  position: absolute;
+  z-index: 2;
+  background: rgba(247, 249, 253, .96);
+  border-radius: 999px;
+  pointer-events: none;
+}
+
+.signalflow-visual .signalflow-email-mask { top: 5.6%; right: 8.2%; width: 13%; height: 2.4%; }
+.signalflow-cover .signalflow-email-mask { top: 5.6%; right: 8.2%; width: 13%; height: 2.4%; }
+.signalflow-page-one { position: relative; }
+.signalflow-page-email-mask { top: 20.2%; right: 7.4%; width: 8.8%; height: 1.5%; }
+
+@media (max-width: 700px) {
+  .signalflow-actions { flex-direction: column; }
+  .signalflow-demo, .signalflow-pdf { width: 100%; justify-content: space-between; }
+}
